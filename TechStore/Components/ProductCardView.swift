@@ -76,5 +76,3 @@ struct ProductCardView: View {
         }
     }
 }
-
-

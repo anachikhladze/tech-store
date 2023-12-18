@@ -21,12 +21,6 @@ struct MainTabView: View {
                     Image(systemName: "tray.2")
                     Text("Categories")
                 }
-            
-//            ProductsView()
-//                .tabItem {
-//                    Image(systemName: "cat")
-//                    Text("Products")
-//                }
         }
     }
 }
@@ -36,4 +30,3 @@ struct TabView_Previews: PreviewProvider {
         MainTabView()
     }
 }
-

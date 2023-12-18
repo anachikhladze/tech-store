@@ -25,7 +25,7 @@ struct InfoCardView: View {
                 .foregroundColor(.gray)
 
             HStack {
-                Text(String(product.price))
+                Text("$\(product.price)")
                     .font(.headline)
                     .foregroundColor(.green)
 
@@ -46,14 +46,14 @@ struct InfoCardView: View {
 
             Text("Brand: \(product.brand)")
                 .font(.subheadline)
-                .foregroundColor(.black)
+                .foregroundColor(.secondary)
 
             Text("Category: \(product.category)")
                 .font(.subheadline)
-                .foregroundColor(.black)
+                .foregroundColor(.secondary)
         }
         .padding()
-        .background(Color.white)
+        .background(Color(hue: 1.0, saturation: 0.087, brightness: 0.99).edgesIgnoringSafeArea(.all))
         .cornerRadius(10)
         .shadow(radius: 5)
         .padding()

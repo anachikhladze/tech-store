@@ -30,6 +30,6 @@ struct CustomButtonView: View {
 }
 #Preview {
     CustomButtonView(text: "Test") {
-        //
+        // action
     }
 }

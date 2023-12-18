@@ -18,7 +18,7 @@ struct ProductDetailView: View {
             VStack {
                 InfoCardView(product: product)
                 
-                CustomButtonView(text: "Back to home") {
+                CustomButtonView(text: "Back to categories") {
                     navigationPath = NavigationPath()
                 }
                 .onAppear {
@@ -26,6 +26,7 @@ struct ProductDetailView: View {
                 }
             }
         }
+        .background(Color(hue: 1.0, saturation: 0.087, brightness: 0.99).edgesIgnoringSafeArea(.all))
     }
 }
 //#Preview {

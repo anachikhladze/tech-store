@@ -66,8 +66,6 @@ struct ImageCarouselView: View {
         }
     }
 }
-    
-//
-//#Preview {
-//    ImageCarouselComponentView(images: ["cream", "skincare", "groceries"])
-//}
+
+
+ // Original code by: Saba Gogrichiani

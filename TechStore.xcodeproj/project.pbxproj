@@ -81,10 +81,10 @@
 		A1028D3E2B2F5A5E007F57A2 /* TechStore */ = {
 			isa = PBXGroup;
 			children = (
+				A1028D562B2F6C0B007F57A2 /* App */,
 				A14F9A572B308FF800901411 /* Scenes */,
 				A1028D622B2F945E007F57A2 /* Service */,
 				A1028D5F2B2F93A3007F57A2 /* Model */,
-				A1028D562B2F6C0B007F57A2 /* App */,
 				A1028D552B2F6BF4007F57A2 /* Components */,
 				A1028D432B2F5A60007F57A2 /* Assets.xcassets */,
 				A1028D452B2F5A60007F57A2 /* Preview Content */,
@@ -103,12 +103,14 @@
 		A1028D552B2F6BF4007F57A2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				A1028D512B2F5E31007F57A2 /* ProductCardView.swift */,
-				A1028D532B2F670A007F57A2 /* FeaturedCardView.swift */,
 				A1028D592B2F7744007F57A2 /* HeaderView.swift */,
 				A1028D5B2B2F77E1007F57A2 /* CartButtonView.swift */,
 				A1028D5D2B2F7BC9007F57A2 /* CustomButtonView.swift */,
+				A1028D532B2F670A007F57A2 /* FeaturedCardView.swift */,
 				A14F9A512B307EE600901411 /* CategoriesCardView.swift */,
+				A1028D512B2F5E31007F57A2 /* ProductCardView.swift */,
+				A14F9A762B30CE6600901411 /* ImageCarouselView.swift */,
+				A14F9A742B30BF8700901411 /* InfoCardView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -145,8 +147,6 @@
 				A14F9A552B30899900901411 /* MainTabView.swift */,
 				A14F9A532B3081DB00901411 /* CategoriesView.swift */,
 				A14F9A582B3090EF00901411 /* ProductsView.swift */,
-				A14F9A742B30BF8700901411 /* InfoCardView.swift */,
-				A14F9A762B30CE6600901411 /* ImageCarouselView.swift */,
 				A14F9A782B30D3B500901411 /* ProductDetailView.swift */,
 			);
 			path = Scenes;

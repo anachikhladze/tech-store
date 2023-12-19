@@ -53,7 +53,7 @@ struct ProductCardView: View {
                             .lineLimit(1)
                             .font(.system(size: 18, weight: .bold))
                             .bold()
-                            
+                        
                         
                         Text(product.category)
                             .foregroundColor(.secondary)
@@ -64,7 +64,6 @@ struct ProductCardView: View {
             }
             Button {
                 viewModel.addToCart(product: product)
-                print("addddd")
             } label: {
                 Image(systemName: "plus")
                     .padding(10)

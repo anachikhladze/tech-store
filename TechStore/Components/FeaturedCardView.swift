@@ -13,7 +13,7 @@ struct FeaturedCardView: View {
         ZStack {
             Rectangle()
                 .cornerRadius(10)
-                .frame(width: 360, height: 100)
+                .frame(width: 365, height: 100)
                 .foregroundColor(Color(hue: 1.0, saturation: 0.087, brightness: 0.99))
                 .shadow(radius: 3)
             

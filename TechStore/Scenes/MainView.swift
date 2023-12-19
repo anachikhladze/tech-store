@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @StateObject var viewModel = MainViewModel()
-
+    
     private let columns = [
         GridItem(.flexible())
     ]
@@ -19,7 +19,6 @@ struct MainView: View {
             Color(Color(hue: 1.0, saturation: 0.087, brightness: 0.99))
                 .edgesIgnoringSafeArea(.all)
             
-            
             VStack {
                 HeaderView()
                     .padding()
@@ -27,7 +26,6 @@ struct MainView: View {
                     VStack(alignment: .leading, spacing: 10) {
                         Text("Popular Products 🔥")
                             .font(.system(size: 24, weight: .bold))
-                        
                         
                         ScrollView(.horizontal, showsIndicators: false) {
                             LazyHGrid(rows: columns, spacing: 20) {
@@ -48,11 +46,10 @@ struct MainView: View {
                         
                         FeaturedCardView()
                         
-                        
                         HStack(alignment: .center) {
                             Spacer()
                             CustomButtonView(text: "Checkout") {
-                                // actiion 
+                                viewModel.startFakeCheckout()
                             }
                             
                             CustomButtonView(text: "Clear Cart") {
@@ -63,12 +60,35 @@ struct MainView: View {
                         }
                     }
                     .padding()
-                    }
                 }
             }
-        .environmentObject(viewModel)
+            
+            .alert("Payment Info", isPresented: $viewModel.showingSuccessAlert) {
+                // Default "Ok" button
+            } message: {
+                if viewModel.total < viewModel.balance && viewModel.total != 0 {
+                    Text("You've successfully purchased the products!")
+                }
+            }
+            
+            .alert("Payment Info", isPresented: $viewModel.showingDeclineAlert) {
+                // Default "Ok" button
+            } message: {
+                if viewModel.total > viewModel.balance {
+                    Text("Your payment was declined...")
+                }
+            }
+            
+            if viewModel.isLoading {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: .blue))
+                    .scaleEffect(3)
+            }
         }
+        .environmentObject(viewModel)
     }
+}
+
 
 
 //struct ContentView_Previews: PreviewProvider {

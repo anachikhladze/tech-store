@@ -82,12 +82,12 @@
 			isa = PBXGroup;
 			children = (
 				A1028D562B2F6C0B007F57A2 /* App */,
-				A14F9A572B308FF800901411 /* Scenes */,
-				A1028D622B2F945E007F57A2 /* Service */,
 				A1028D5F2B2F93A3007F57A2 /* Model */,
+				A1028D622B2F945E007F57A2 /* Service */,
+				A14F9A572B308FF800901411 /* Scenes */,
 				A1028D552B2F6BF4007F57A2 /* Components */,
-				A1028D432B2F5A60007F57A2 /* Assets.xcassets */,
 				A1028D452B2F5A60007F57A2 /* Preview Content */,
+				A1028D432B2F5A60007F57A2 /* Assets.xcassets */,
 			);
 			path = TechStore;
 			sourceTree = "<group>";
@@ -135,7 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				A1028D632B2F9471007F57A2 /* NetworkManager.swift */,
-				A1028D652B2F955C007F57A2 /* MainViewModel.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -145,6 +144,7 @@
 			children = (
 				A1028D572B2F6C26007F57A2 /* MainView.swift */,
 				A14F9A552B30899900901411 /* MainTabView.swift */,
+				A1028D652B2F955C007F57A2 /* MainViewModel.swift */,
 				A14F9A532B3081DB00901411 /* CategoriesView.swift */,
 				A14F9A582B3090EF00901411 /* ProductsView.swift */,
 				A14F9A782B30D3B500901411 /* ProductDetailView.swift */,

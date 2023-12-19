@@ -19,7 +19,7 @@ struct ProductDetailView: View {
                 InfoCardView(product: product)
                 
                 CustomButtonView(text: "Back to categories") {
-                    navigationPath = NavigationPath()
+                    navigationPath.removeLast(navigationPath.count) // need to fix this
                 }
                 .onAppear {
                     viewModel.fetchProducts()
@@ -29,6 +29,7 @@ struct ProductDetailView: View {
         .background(Color(hue: 1.0, saturation: 0.087, brightness: 0.99).edgesIgnoringSafeArea(.all))
     }
 }
+
 //#Preview {
 //    ProductDetailView()
 //}

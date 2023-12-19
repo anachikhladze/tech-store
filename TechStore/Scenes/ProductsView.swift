@@ -44,13 +44,12 @@ struct MainContentView: View {
                     BestsellerTitleView()
                     FeaturedCardView()
                     CheckoutButtonsView()
-                    }
                 }
-                .padding()
             }
+            .padding()
         }
     }
-
+}
 
 struct CategoryTitleView: View {
     var product: Product
@@ -88,7 +87,6 @@ struct ProductsGridView: View {
         }
     }
 }
-
 
 struct BestsellerTitleView: View {
     var body: some View {

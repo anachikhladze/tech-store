@@ -10,7 +10,7 @@ import SwiftUI
 struct CategoriesView: View {
     
     @StateObject var viewModel = MainViewModel()
-    @State var navigationPath = NavigationPath()
+    @State private var navigationPath = NavigationPath()
     
     let columns = [
         GridItem(.flexible()),
@@ -25,7 +25,7 @@ struct CategoriesView: View {
         }
     }
     
-    var categoriesScrollView: some View {
+   private var categoriesScrollView: some View {
         ScrollView() {
             LazyVGrid(columns: columns, spacing: 10) {
                 categoriesCardViews
@@ -34,7 +34,7 @@ struct CategoriesView: View {
         }
     }
     
-    var categoriesCardViews: some View {
+    private var categoriesCardViews: some View {
         Group {
             if let products = viewModel.productData?.products {
                 productViews(for: products)

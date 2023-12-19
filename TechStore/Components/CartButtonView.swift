@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct CartButtonView: View {
+    
+    // MARK: - Properties
     var numberOfProducts: Int
     
+    // MARK: - Body
     var body: some View {
         ZStack(alignment: .topTrailing) {
             Image(systemName: "cart")

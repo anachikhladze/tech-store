@@ -8,6 +8,8 @@
 import Foundation
 
 final class MainViewModel: ObservableObject {
+    
+    // MARK: - Properties
     @Published var balance: Int = 1500
     @Published var productData: ProductData?
     
@@ -18,10 +20,13 @@ final class MainViewModel: ObservableObject {
     @Published var showingDeclineAlert = false
     @Published var isLoading = false
     
+    
+    // MARK: - Init
     init() {
         fetchProducts()
     }
     
+    // MARK: - Methods
     func fetchProducts() {
         Task {
             do {
@@ -52,6 +57,8 @@ final class MainViewModel: ObservableObject {
             if self.total < self.balance && self.total != 0 {
                 self.showingSuccessAlert.toggle()
                 self.balance -= self.total
+                self.total = 0
+                self.cartProducts = []
             } else if self.total > self.balance {
                 self.showingDeclineAlert.toggle()
             }

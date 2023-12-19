@@ -9,9 +9,11 @@ import SwiftUI
 
 struct CategoriesCardView: View {
     
+    // MARK: - Properties
     @EnvironmentObject var viewModel: MainViewModel
     var product: Product
     
+    // MARK: - Body
     var body: some View {
         ZStack() {
             Rectangle()

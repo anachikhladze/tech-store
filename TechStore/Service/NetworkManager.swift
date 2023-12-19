@@ -39,3 +39,8 @@ enum GHError: Error {
     case invalidResponse
     case invalidData
 }
+
+/*
+ ვიცი რომ package-ად უნდა მქონდეს და ჯენერიკად, უბრალოდ
+ async await-ით პირველად გავაკეთე და შემდეგისთვის გავაკეთებ package-ს <3
+ */

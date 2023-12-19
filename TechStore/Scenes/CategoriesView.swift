@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CategoriesView: View {
     
+    // MARK: - Properties
     @StateObject var viewModel = MainViewModel()
     @State private var navigationPath = NavigationPath()
     
@@ -17,6 +18,7 @@ struct CategoriesView: View {
         GridItem(.flexible())
     ]
     
+    // MARK: - Body
     var body: some View {
         NavigationStack(path: $navigationPath) {
             categoriesScrollView

@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct ProductsView: View {
-    @StateObject var viewModel = MainViewModel()
+    
+    // MARK: - Properties
+    @EnvironmentObject var viewModel: MainViewModel
     @Binding var navigationPath: NavigationPath
     var product: Product
     
+    // MARK: - Body
     var body: some View {
         ZStack {
             BackgroundView()
@@ -102,7 +105,26 @@ struct CheckoutButtonsView: View {
         HStack(alignment: .center) {
             Spacer()
             CustomButtonView(text: "Checkout") {
-                // action
+                viewModel.startFakeCheckout()
+            }
+            .alert("Payment Info", isPresented: $viewModel.showingSuccessAlert) {
+                // Default "Ok" button
+            } message: {
+                if viewModel.total < viewModel.balance {
+                    Text("✅ You've successfully purchased the products! ")
+                }
+            }
+            .alert("Payment Info", isPresented: $viewModel.showingDeclineAlert) {
+                // Default "Ok" button
+            } message: {
+                if viewModel.total > viewModel.balance {
+                    Text("🚫 Your payment was declined. ")
+                }
+            }
+            if viewModel.isLoading {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: .blue))
+                    .scaleEffect(3)
             }
             
             CustomButtonView(text: "Clear Cart") {
@@ -113,3 +135,4 @@ struct CheckoutButtonsView: View {
         }
     }
 }
+

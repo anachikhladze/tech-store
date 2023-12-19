@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct MainView: View {
-    @StateObject var viewModel = MainViewModel()
     
+    // MARK: - Properties
+    @EnvironmentObject var viewModel: MainViewModel
     private let columns = [
         GridItem(.flexible())
     ]
     
+    // MARK: - Body
     var body: some View {
         ZStack {
             Color(Color(hue: 1.0, saturation: 0.087, brightness: 0.99))
@@ -66,8 +68,8 @@ struct MainView: View {
             .alert("Payment Info", isPresented: $viewModel.showingSuccessAlert) {
                 // Default "Ok" button
             } message: {
-                if viewModel.total < viewModel.balance && viewModel.total != 0 {
-                    Text("You've successfully purchased the products!")
+                if viewModel.total < viewModel.balance {
+                    Text("✅ You've successfully purchased the products!")
                 }
             }
             
@@ -75,7 +77,7 @@ struct MainView: View {
                 // Default "Ok" button
             } message: {
                 if viewModel.total > viewModel.balance {
-                    Text("Your payment was declined...")
+                    Text("🚫 Your payment was declined.")
                 }
             }
             

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MainTabView: View {
+    
+    // MARK: - Body
     var body: some View {
         TabView {
             MainView()

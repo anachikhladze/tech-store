@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct TechStoreApp: App {
+    @StateObject var viewModel = MainViewModel()
+
     var body: some Scene {
         WindowGroup {
-            MainTabView()
-            }
+            MainTabView().environmentObject(viewModel)
         }
     }
+}

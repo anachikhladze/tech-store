@@ -24,6 +24,9 @@ struct CategoriesView: View {
             categoriesScrollView
                 .navigationBarTitle("Categories", displayMode: .inline)
                 .background(Color(hue: 1.0, saturation: 0.087, brightness: 0.99).edgesIgnoringSafeArea(.all))
+                .navigationDestination(for: Product.self) { product in
+                    ProductsView(navigationPath: $navigationPath, product: product)
+                }
         }
     }
     
@@ -57,7 +60,7 @@ struct CategoriesView: View {
     
     @ViewBuilder
     private func productCard(for product: Product) -> some View {
-        NavigationLink(destination: ProductsView(navigationPath: $navigationPath, product: product)) {
+        NavigationLink(value: product) {
             CategoriesCardView(product: product)
                 .environmentObject(viewModel)
                 .padding(.bottom, 15)

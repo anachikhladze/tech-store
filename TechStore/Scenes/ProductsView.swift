@@ -77,8 +77,11 @@ struct ProductsGridView: View {
             LazyHGrid(rows: columns, spacing: 20) {
                 if let products = viewModel.productData?.products {
                     ForEach(products.filter { $0.category == product.category }, id: \.id) { product in
-                        NavigationLink(destination: ProductDetailView(navigationPath: $navigationPath, product: product)) {
+                        NavigationLink(value: "Details") {
                             ProductCardView(product: product)
+                        }
+                        .navigationDestination(for: String.self) { _ in
+                            ProductDetailView(navigationPath: $navigationPath, product: product)
                         }
                     }
                 }
@@ -87,9 +90,11 @@ struct ProductsGridView: View {
         .frame(height: 340)
         .onAppear {
             viewModel.fetchProducts()
+            
         }
     }
 }
+
 
 struct BestsellerTitleView: View {
     var body: some View {

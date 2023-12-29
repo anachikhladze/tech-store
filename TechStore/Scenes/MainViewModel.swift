@@ -31,7 +31,7 @@ final class MainViewModel: ObservableObject {
         Task {
             do {
                 let fetchedProductData = try await NetworkManager.shared.fetchProductData()
-                DispatchQueue.main.async {
+                await MainActor.run {
                     self.productData = fetchedProductData
                 }
             } catch {

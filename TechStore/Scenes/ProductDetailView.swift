@@ -22,7 +22,6 @@ struct ProductDetailView: View {
                 
                 CustomButtonView(text: "Back to categories") {
                     navigationPath.removeLast(navigationPath.count)
-                    // ეს არ მუშაობს, რაღაც არასწორად მაქვს ნავიგაცია და ვერ გავფიქსე ჯერჯერობით
                 }
                 .onAppear {
                     viewModel.fetchProducts()
